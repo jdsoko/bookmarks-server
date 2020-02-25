@@ -20,12 +20,15 @@ describe('Bookmarks Endpoints', () => {
 
   afterEach('cleanup', () => db('bookmarks').truncate())
 
+ 
   beforeEach('copy the bookmarks', () => {
-    
+   
     bookmarksCopy = store.bookmarks.slice()
   })
 
+ 
   afterEach('restore the bookmarks', () => {
+
     store.bookmarks = bookmarksCopy
   })
 
@@ -139,6 +142,7 @@ describe('Bookmarks Endpoints', () => {
     })
   })
 
+  
   describe('POST /bookmarks', () => {
     it(`responds with 400 missing 'title' if not supplied`, () => {
       const newBookmarkMissingTitle = {
