@@ -1,3 +1,27 @@
 {"message":"Bookmarked https://www.youtube.com with id 0793104d-8f04-4961-9e7a-7d06c5a2eb26 created","level":"info"}
 {"message":"Bookmarked https://www.youtube.com with id 3c1e4324-7400-4392-9a27-65a6b15ff415 created","level":"info"}
 {"message":"Bookmark https://www.google.com with id 1c7ef843-6315-4dac-addf-8851b6fa3e78 deleted.","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/f496ca5e-2ec3-43f0-b0e3-4a3cba622d56","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/f496ca5e-2ec3-43f0-b0e3-4a3cba622d56","level":"error"}
+{"message":"Bookmark https://www.google.com with id f496ca5e-2ec3-43f0-b0e3-4a3cba622d56 was deleted.","level":"info"}
+{"message":"Bookmark with id doesnt-exist not found.","level":"error"}
+{"message":"Bookmarked https://test.com with id 994d5392-c0d5-49bc-ac90-9760462be00b created","level":"info"}
+{"message":"Url is required","level":"error"}
+{"message":"Rating must be a number between 0 and 5","level":"error"}
+{"message":"Rating must be a number between 0 and 5","level":"error"}
+{"message":"Bookmarked htp://invalid-url with id 9932e2cc-746f-49a4-a680-e68698abd6c8 created","level":"info"}
+{"message":"Bookmarked https://test.com with id a349596e-55f6-4ccd-b156-50c319fb97f8 created","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/db90d255-e6f8-4d98-8358-68d1abb7af55","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/db90d255-e6f8-4d98-8358-68d1abb7af55","level":"error"}
+{"message":"Bookmark https://www.google.com with id db90d255-e6f8-4d98-8358-68d1abb7af55 was deleted.","level":"info"}
+{"message":"Bookmark with id doesnt-exist not found.","level":"error"}
+{"message":"Bookmarked https://test.com with id 92340a2c-fe9d-40a6-87ff-66470cb345db created","level":"info"}
+{"message":"Url is required","level":"error"}
+{"message":"Rating must be a number between 0 and 5","level":"error"}
+{"message":"Rating must be a number between 0 and 5","level":"error"}
+{"message":"Bookmarked htp://invalid-url with id f0d9e554-dda5-44c1-9102-0cfa62728bfb created","level":"info"}
+{"message":"Bookmarked https://test.com with id 6189e90e-36d2-441e-810d-7373785ab695 created","level":"info"}
