@@ -3,7 +3,6 @@ const xss = require('xss')
 const uuid = require('uuid/v4')
 const { isWebUri } = require('valid-url')
 const logger = require('../logger')
-const store = require('../store')
 const BookmarksService = require('./bookmarks-service')
 
 const bookmarksRouter = express.Router()
@@ -83,7 +82,7 @@ bookmarksRouter
   .get((req, res, next) => {
     res.json(serializeBookmark(res.bookmark))
   })
-  .delete((req, res) => {
+  .delete((req, res, next) => {
     BookmarksService.deleteBookmark(
       req.app.get('db'),
       req.params.bookmark_id
@@ -92,6 +91,40 @@ bookmarksRouter
       res.status(204).end()
     )
     .catch(next)
+  })
+  .patch(bodyParser, (req, res, next) => {
+    const { title, url, description, rating } = req.body
+    const bookmarkToUpdate = { title, url, description, rating }
+
+    const numberOfValues = Object.values(bookmarkToUpdate).filter(Boolean).length
+    if (numberOfValues === 0) {
+      logger.error(`Invalid update without required fields`)
+      return res.status(400).json({
+        error: {
+          message: `Request body must contain either 'title', 'url', 'description', or 'rating'`
+        }
+      })
+    }
+    if (!Number.isInteger(rating) || rating < 0 || rating > 5) {
+      logger.error(`Invalid rating '${rating}' supplied`)
+      return res.status(400).send(`'rating' must be a number between 0 and 5`)
+    }
+
+    if (!isWebUri(url)) {
+      logger.error(`Invalid url '${url}' supplied`)
+      return res.status(400).send(`'url' must be a valid URL`)
+    }
+
+    BookmarksService.updateBookmark(
+      req.app.get('db'),
+      req.params.bookmark_id,
+      bookmarkToUpdate
+    )
+    .then(numRowsAffected => {
+      res.status(204).end()
+    })
+    .catch(next)
+    
   })
 
 module.exports = bookmarksRouter
